@@ -28,34 +28,55 @@ for (var i=0; i < arrayOfTens.length; i++) {
     var sendNumber = arrayOfTens[i]/1000;
     ones = "M";
     //call createRoman function -> deliver sendNumber and i variables
-    alert(ones + fives + tens);
+    createRoman(sendNumber, i);
   } else if (arrayOfTens[i] >= 100) {
     var sendNumber = arrayOfTens[i]/100;
     ones = "C";
     fives = "D";
     tens = "M";
-    alert(ones + fives + tens);
+    createRoman(sendNumber, i);
   } else if (arrayOfTens[i] >= 10) {
     var sendNumber = arrayOfTens[i]/10;
     ones = "X";
     fives = "L";
     tens = "C";
-    alert(ones + fives + tens);
+    createRoman(sendNumber, i);
   } else if (arrayOfTens[i] >= 10) {
     var sendNumber = arrayOfTens[i]/10;
     ones = "X";
     fives = "L";
     tens = "C";
-    alert(ones + fives + tens);
+    createRoman(sendNumber, i);
   } else if (arrayOfTens[i] >= 1) {
-    var sendNumber = arrayOfTens[i]/10;
+    var sendNumber = arrayOfTens[i]/1;
     ones = "I";
     fives = "V";
     tens = "X";
-    alert(ones + fives + tens);
+    createRoman(sendNumber, i);
   }
 }
 
-function createRoman (var base10; var i) {
-
+function createRoman(base10, i) {
+  //alert(base10 + " is the number and " + i + " is the index");
+  var romanNumeral = "";
+  if (base10 === 1) {
+    romanNumeral = ones;
+  } else if (base10 === 2) {
+    romanNumeral = ones + ones;
+  } else if (base10 === 3) {
+    romanNumeral = ones + ones + ones;
+  } else if (base10 === 4) {
+    romanNumeral = ones + fives;
+  } else if (base10 === 5) {
+    romanNumeral = fives;
+  } else if (base10 === 6) {
+    romanNumeral = fives + ones;
+  } else if (base10 === 7) {
+    romanNumeral = fives + ones + ones;
+  } else if (base10 === 8) {
+    romanNumeral = fives + ones + ones + ones;
+  } else if (base10 === 9) {
+    romanNumeral = ones + tens;
+  }
+  alert(romanNumeral + " at index " + i);
 }
