@@ -57,7 +57,6 @@ for (var i=0; i < arrayOfTens.length; i++) {
 }
 
 function createRoman(base10, i) {
-  //alert(base10 + " is the number and " + i + " is the index");
   var romanNumeral = "";
   if (base10 === 1) {
     romanNumeral = ones;
@@ -78,5 +77,8 @@ function createRoman(base10, i) {
   } else if (base10 === 9) {
     romanNumeral = ones + tens;
   }
-  alert(romanNumeral + " at index " + i);
+  //alert(romanNumeral + " at index " + i);
+  arrayOfRoman[i] = romanNumeral;
 }
+
+alert(arrayOfRoman.toString());
